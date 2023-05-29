@@ -1,0 +1,6 @@
+{
+  "code-runner.executorMap": {
+    "typescript": "yarn ts-node-dev --respawn --transpile-only --cls",
+  },
+  "code-runner.runInTerminal": true,
+}
