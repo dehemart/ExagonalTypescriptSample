@@ -9,7 +9,7 @@ class Route404 {
 
   execute() {
     this.route.use( '*', ( _, res ) => {
-      res.status( 404 ).json( { code:404, message:'Rota não encontrada!' } );
+      res.status( 404 ).json( { code:404, message:'Route not found!' } );
     } );
 
     return this.route;
