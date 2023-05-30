@@ -8,12 +8,11 @@ export class Server {
 
   constructor() {
     dotenv.config();
+    console.log( `The connection URL is ${process.env.DATABASE_URL_POSTGRES}` );
     this.server = new App().execute();
   }
 
   execute() {
-    console.log( process.env.DATABASE_URL );
-
     this.server.listen( this.server_port, () => {
       console.log( `Server running at ${this.server_port} port ......` );
     } );

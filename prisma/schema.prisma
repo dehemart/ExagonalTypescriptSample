@@ -7,5 +7,24 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("DATABASE_URL_POSTGRES")
+}
+
+model User {
+  id       Int          @id @default(autoincrement())
+  email    String       @unique
+  username String
+  password String?
+  profile  UserProfile?
+  createAt DateTime?    @default(now()) @db.Timestamptz(6)
+}
+
+model UserProfile {
+  id       Int       @id @default(autoincrement())
+  name     String?
+  birthDay DateTime?
+  message  String?
+  user     User      @relation(fields: [userId], references: [id])
+  userId   Int       @unique
+  createAt DateTime? @default(now()) @db.Timestamptz(6)
 }
