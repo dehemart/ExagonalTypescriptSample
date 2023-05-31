@@ -8,7 +8,6 @@ export class Server {
 
   constructor() {
     dotenv.config();
-    console.log( `The connection URL is ${process.env.DATABASE_URL_POSTGRES}` );
     this.server = new App().execute();
   }
 
