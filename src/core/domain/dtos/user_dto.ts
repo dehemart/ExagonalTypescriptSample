@@ -1,19 +1,21 @@
+import { UserStatusEnum } from '../enums/user_status_enum';
+
 interface UserDto {
-  id: number;
-  email:    string;
+  id?: number;
+  email: string;
   username: string;
   password: string;
   profile: UserProfileDto;
-  createAt: Date;
+  status: UserStatusEnum;
+  createAt?: Date;
 }
 
 interface UserProfileDto {
-  id:       number;
-  name:     string;
+  id?: number;
+  name: string;
   birthDay: Date;
-  message:  string;
-  userId: number;
-  createAt: Date;
+  message: string;
+  createAt?: Date;
 }
 
 export{ UserDto, UserProfileDto };

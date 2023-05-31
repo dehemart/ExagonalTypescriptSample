@@ -10,13 +10,21 @@ datasource db {
   url      = env("DATABASE_URL_POSTGRES")
 }
 
+enum UserStatusEnum {
+  CREATED
+  ACTIVATED
+  DEACTIVATED
+  DELETED
+}
+
 model User {
-  id       Int          @id @default(autoincrement())
-  email    String       @unique
+  id       Int            @id @default(autoincrement())
+  email    String         @unique
   username String
   password String?
   profile  UserProfile?
-  createAt DateTime?    @default(now()) @db.Timestamptz(6)
+  status   UserStatusEnum
+  createAt DateTime?      @default(now()) @db.Timestamptz(6)
 }
 
 model UserProfile {
