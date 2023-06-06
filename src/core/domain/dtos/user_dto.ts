@@ -1,7 +1,6 @@
 import { UserStatusEnum } from '../enums/user_status_enum';
 
 interface UserDto {
-  id?: number;
   email: string;
   username: string;
   password: string;
@@ -11,10 +10,10 @@ interface UserDto {
 }
 
 interface UserProfileDto {
-  id?: number;
   name: string;
   birthDay: Date;
   message: string;
+  userId: number;
   createAt?: Date;
 }
 

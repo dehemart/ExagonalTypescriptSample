@@ -1,15 +1,30 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Prisma } from '@prisma/client';
 
-class DatabasePrisma {
+export class DatabasePrisma {
   private prisma: PrismaClient;
 
   constructor() {
     this.prisma = new PrismaClient();
   }
 
-  getDatabaseClient(): PrismaClient {
+  async getDatabaseClient(): Promise<PrismaClient> {
+    await this.prisma.$connect();
+
     return this.prisma;
   }
-}
 
-export { DatabasePrisma };
+  async disconnect(): Promise<boolean> {
+    try{
+      await this.prisma.$disconnect();
+      console.info( 'Database disconnected!' );
+
+      return true;
+    } catch
+    {
+      console.info( 'Error on disconnection!' );
+
+      return false;
+    }
+
+  }
+}

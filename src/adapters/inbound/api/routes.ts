@@ -19,6 +19,7 @@ class AppRoute {
 
     this.route.use( new RouteAbout( this.aboutImplements ).execute( ) );
 
+    
     this.route.use( new Route404().execute() );
 
     return this.route;
