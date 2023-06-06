@@ -1,12 +1,12 @@
-import { UserProfileDto } from '../dtos/user_dto';
+import { UserProfileDto } from '../dtos/user_profile_dto';
 
 export class UserProfile {
-  id?: number | undefined;
-  name: string;
-  birthDay: Date;
-  message:  string;
-  userId:   number;
-  createAt?: Date;
+  private id?: number | undefined;
+  private name: string;
+  private birthDay: Date;
+  private message:  string;
+  private userId:   number;
+  private createAt?: Date;
 
   constructor( { name, birthDay, message, userId }: UserProfileDto ){
     this.id;

@@ -1,4 +1,3 @@
-import { UserDto } from '../dtos/user_dto';
 import { UserStatusEnum } from '../enums/user_status_enum';
 import { UserProfile } from './user_profile_model';
 
@@ -11,7 +10,7 @@ export class UserModel {
   status: UserStatusEnum;
   createAt?: Date;
 
-  constructor( { email, username, password, profile }: UserDto ){
+  constructor( { email, username, password, profile }: UserModel ){
     this.id;
     this.email = email;
     this.username = username;

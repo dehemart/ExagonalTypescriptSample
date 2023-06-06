@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { AboutInterface } from '../../../core/ports/inbound/about_interface';
+import { AboutInterface } from '../../../core/ports/inbound/about_use_case_interface';
 
 
 class RouteAbout {

@@ -1,8 +1,8 @@
 import { Router, json } from 'express';
 import { Route404 } from './route_404';
 import { RouteAbout } from './route_about';
-import { AboutInterface } from '../../../core/ports/inbound/about_interface';
-import { AboutUsecase } from '../../../core/usecases/about_usecase';
+import { AboutInterface } from '../../../core/ports/inbound/about_use_case_interface';
+import { AboutUsecase } from '../../../core/usecases/about_use_case';
 
 
 class AppRoute {
@@ -19,7 +19,7 @@ class AppRoute {
 
     this.route.use( new RouteAbout( this.aboutImplements ).execute( ) );
 
-    
+
     this.route.use( new Route404().execute() );
 
     return this.route;
